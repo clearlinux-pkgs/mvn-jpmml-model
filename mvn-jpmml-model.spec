@@ -4,11 +4,14 @@
 #
 Name     : mvn-jpmml-model
 Version  : 1.2.15
-Release  : 1
+Release  : 2
 URL      : https://github.com/jpmml/jpmml-model/archive/1.2.15.tar.gz
 Source0  : https://github.com/jpmml/jpmml-model/archive/1.2.15.tar.gz
-Source1  : https://repo1.maven.org/maven2/org/jpmml/pmml-model/1.2.15/pmml-model-1.2.15.jar
-Source2  : https://repo1.maven.org/maven2/org/jpmml/pmml-model/1.2.15/pmml-model-1.2.15.pom
+Source1  : https://repo.maven.apache.org/maven2/org/jpmml/jpmml-model/1.2.15/jpmml-model-1.2.15.pom
+Source2  : https://repo.maven.apache.org/maven2/org/jpmml/pmml-schema/1.2.15/pmml-schema-1.2.15.jar
+Source3  : https://repo.maven.apache.org/maven2/org/jpmml/pmml-schema/1.2.15/pmml-schema-1.2.15.pom
+Source4  : https://repo1.maven.org/maven2/org/jpmml/pmml-model/1.2.15/pmml-model-1.2.15.jar
+Source5  : https://repo1.maven.org/maven2/org/jpmml/pmml-model/1.2.15/pmml-model-1.2.15.pom
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : BSD-3-Clause
@@ -31,11 +34,20 @@ data components for the mvn-jpmml-model package.
 %build
 
 %install
-mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/jpmml/pmml-model/1.2.15
-cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/org/jpmml/pmml-model/1.2.15
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/jpmml/jpmml-model/1.2.15
+cp %{SOURCE1} %{buildroot}/usr/share/java/.m2/repository/org/jpmml/jpmml-model/1.2.15/jpmml-model-1.2.15.pom
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/jpmml/pmml-schema/1.2.15
+cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/org/jpmml/pmml-schema/1.2.15/pmml-schema-1.2.15.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/jpmml/pmml-schema/1.2.15
+cp %{SOURCE3} %{buildroot}/usr/share/java/.m2/repository/org/jpmml/pmml-schema/1.2.15/pmml-schema-1.2.15.pom
 
 mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/jpmml/pmml-model/1.2.15
-cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/org/jpmml/pmml-model/1.2.15
+cp %{SOURCE4} %{buildroot}/usr/share/java/.m2/repository/org/jpmml/pmml-model/1.2.15/pmml-model-1.2.15.jar
+
+mkdir -p %{buildroot}/usr/share/java/.m2/repository/org/jpmml/pmml-model/1.2.15
+cp %{SOURCE5} %{buildroot}/usr/share/java/.m2/repository/org/jpmml/pmml-model/1.2.15/pmml-model-1.2.15.pom
 
 
 %files
@@ -43,5 +55,8 @@ cp %{SOURCE2} %{buildroot}/usr/share/java/.m2/repository/org/jpmml/pmml-model/1.
 
 %files data
 %defattr(-,root,root,-)
+/usr/share/java/.m2/repository/org/jpmml/jpmml-model/1.2.15/jpmml-model-1.2.15.pom
 /usr/share/java/.m2/repository/org/jpmml/pmml-model/1.2.15/pmml-model-1.2.15.jar
 /usr/share/java/.m2/repository/org/jpmml/pmml-model/1.2.15/pmml-model-1.2.15.pom
+/usr/share/java/.m2/repository/org/jpmml/pmml-schema/1.2.15/pmml-schema-1.2.15.jar
+/usr/share/java/.m2/repository/org/jpmml/pmml-schema/1.2.15/pmml-schema-1.2.15.pom
