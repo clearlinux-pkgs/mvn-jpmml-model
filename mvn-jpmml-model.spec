@@ -4,7 +4,7 @@
 #
 Name     : mvn-jpmml-model
 Version  : 1.2.15
-Release  : 2
+Release  : 3
 URL      : https://github.com/jpmml/jpmml-model/archive/1.2.15.tar.gz
 Source0  : https://github.com/jpmml/jpmml-model/archive/1.2.15.tar.gz
 Source1  : https://repo.maven.apache.org/maven2/org/jpmml/jpmml-model/1.2.15/jpmml-model-1.2.15.pom
